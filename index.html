@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Block Programming Interface</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Simple Block-Based Programming Interface</h1>
+
+    <!-- The toolbox containing code blocks -->
+    <section id="toolbox">
+        <h2>Toolbox</h2>
+        <div class="block" id="block1" draggable="true" ondragstart="drag(event)" data-code="console.log('Hello World!')">
+            Print "Hello World"
+        </div>
+        <div class="block" id="block2" draggable="true" ondragstart="drag(event)" data-code="let x = 10;">
+            Set variable x to 10
+        </div>
+        <div class="block" id="block3" draggable="true" ondragstart="drag(event)" data-code="if (x > 5) { console.log(x); }">
+            If x > 5, log x
+        </div>
+        <div class="block" id="block4" draggable="true" ondragstart="drag(event)" data-code="for (let i = 0; i < 5; i++) { console.log(i); }">
+            Loop: Print numbers 0 to 4
+        </div>
+    </section>
+
+    <!-- The program area where blocks will be dropped -->
+    <section>
+        <h2>Program Area</h2>
+        <div id="program-area" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <!-- Blocks will be dropped here -->
+        </div>
+    </section>
+
+    <!-- Button to execute the code -->
+    <button onclick="runProgram()">Run Program</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
